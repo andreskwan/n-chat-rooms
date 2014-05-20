@@ -61,8 +61,8 @@ $(function(){
 			loginForm.on('submit', function(e){
 				e.preventDefault();
 				name = $.trim(yourName.val());
-				if(name.length < 1){
-					alert("Please enter a nick name longer than 1 character!");
+				if(name.length < 3){
+					alert("Please enter a nick name longer than 3 characters!");
 					return;
 				}
 				//Kwan
@@ -74,48 +74,36 @@ $(function(){
 					alert("Please enter a valid email!");
 				}
 				else {
-
 					showMessage("inviteSomebody");
-
 					// call the server-side function 'login' and send user's parameters
 					socket.emit('login', {user: name, avatar: email, id: id});
 				}
-			
 			});
 		}
 
 		else if(data.number === 1) {
-
 			showMessage("personinchat",data);
-
 			loginForm.on('submit', function(e){
-
 				e.preventDefault();
-
 				name = $.trim(hisName.val());
-
-				if(name.length < 1){
-					alert("Please enter a nick name longer than 1 character!");
+				if(name.length < 3){
+					alert("Please enter a nick name longer than 3 characters!");
 					return;
 				}
-
 				if(name == data.user){
 					alert("There already is a \"" + name + "\" in this room!");
 					return;
 				}
 				email = hisEmail.val();
-
 				if(!isValid(email)){
 					alert("Wrong e-mail format!");
 				}
 				else{
-
 					socket.emit('login', {user: name, avatar: email, id: id});
 				}
 
 			});
 		}
-
 		else {
 			showMessage("tooManyPeople");
 		}
@@ -123,104 +111,77 @@ $(function(){
 	});
 
 	// Other useful 
-
 	socket.on('startChat', function(data){
 		if(data.boolean && data.id == id) {
-
 			chats.empty();
-
 			if(name === data.users[0]) {
-
 				showMessage("youStartedChatWithNoMessages",data);
 			}
 			else {
-
 				showMessage("heStartedChatWithNoMessages",data);
 			}
-
 			chatNickname.text(friend);
 		}
 	});
 
 	socket.on('leave',function(data){
-
 		if(data.boolean && id==data.room){
-
 			showMessage("somebodyLeft", data);
 			chats.empty();
 		}
-
 	});
 
 	socket.on('tooMany', function(data){
-
 		if(data.boolean && name.length === 0) {
-
 			showMessage('tooManyPeople');
 		}
 	});
 
 	socket.on('receive', function(data){
-
 			showMessage('chatStarted');
-
 			createChatMessage(data.msg, data.user, data.img, moment());
 			scrollToBottom();
 	});
 
 	textarea.keypress(function(e){
-
 		// Submit the form on enter
-
 		if(e.which == 13) {
 			e.preventDefault();
 			chatForm.trigger('submit');
 		}
-
 	});
 
 	chatForm.on('submit', function(e){
-
 		e.preventDefault();
-
 		// Create a new chat message and display it directly
-
 		showMessage("chatStarted");
-
-		createChatMessage(textarea.val(), name, img, moment());
-		scrollToBottom();
-
-		// Send the message to the other person in the chat
-		socket.emit('msg', {msg: textarea.val(), user: name, img: img});
-
-		// Empty the textarea
-		textarea.val("");
+		if ($.trim(textarea.val()) !== "") {
+			createChatMessage(textarea.val(), name, img, moment());
+			scrollToBottom();
+			// Send the message to the other person in the chat
+			socket.emit('msg', {msg: textarea.val(), user: name, img: img});
+			// Empty the textarea
+			textarea.val("");
+		};
 	});
 
 	// Update the relative time stamps on the chat messages every minute
-
 	setInterval(function(){
-
 		messageTimeSent.each(function(){
 			var each = moment($(this).data('time'));
 			$(this).text(each.fromNow());
 		});
-
 	},60000);
 
 	// Function that creates a new chat message
-
 	function createChatMessage(msg,user,imgg,now){
-
 		var who = '';
-
 		if(user===name) {
 			who = 'me';
 		}
 		else {
 			who = 'you';
 		}
-
 		var li = $(
 			'<li class=' + who + '>'+
 				'<div class="image">' +
