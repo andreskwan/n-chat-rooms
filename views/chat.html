@@ -36,16 +36,17 @@
 					<input type="text" id="yourEmail" placeholder="Your email address" /><br/>
 					<input type="submit" id="yourEnter" value="ENTER" />
 				</form>
-
 			</div>
 		</div>
 
-		<div class="personinside">
-			<img src="../img/unnamed.jpg" id="ownerImage" />
-			<div class="infoInside">
-				<h2>Chat with <span class="nickname-chat"></span></h2>
-				<br/>
+		<div class="personinside relative">
+			<figure class="avatar absolute">
+				<img src="../img/unnamed.jpg" id="ownerImage" />
+			</figure>
 
+			<div class="infoInside  absolute">
+				<h2>Chat with <span class="nickname-chat"></span></h2>
+			<br/>			
 				<form class="loginForm">
 					<input type="text" id="hisName" placeholder="Your nick name" /><br/>
 					<input type="text" id="hisEmail" placeholder="Your email address" /><br/>
@@ -62,9 +63,9 @@
 			</div>
 		</div>
 
-		<div class="left">
+		<div class="left relative">
 			<img src="../img/unnamed.jpg" id="leftImage" />
-			<div class="info">
+			<div class="info absolute">
 				<h2><span class="nickname-left"></span> has left this chat.</h2>
 				<h5>Invite somebody else by sending them this page.</h5>
 			</div>
@@ -75,9 +76,9 @@
 			<h5>There are already two people in it. Would you like to create a <a title="New Room" href="/create" id="room">new room</a>?</h5>
 		</div>
 
-		<div class="nomessages">
+		<div class="nomessages relative">
 			<img src="../img/unnamed.jpg" id="noMessagesImage" />
-			<div class="info">
+			<div class="info absolute">
 				<h2>You are chatting with <span class="nickname-chat"></span>.</h2>
 				<h5>Send them a message from the form below!</h5>
 			</div>
@@ -88,7 +89,6 @@
 			<ul class="chats">
 				<!-- The chat messages will go here -->
 			</ul>
-
 		</div>
 
 	</section>
