@@ -9,38 +9,28 @@
 <html>
 
 <head>
-
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Private chat room | Tutorialzine Demo</title>
-
-	<link type="text/css" rel="stylesheet" href="../css/stylesheet.css" />
+	<link type="text/css" rel="stylesheet" href="../css/estilos.css" />
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans Condensed:300italic,300,700" rel="stylesheet" type="text/css">
-
-
 </head>
 
 <body>
-
 	<header class="banner">
-
 		<h1 class="bannertext">
-			<a href="http://tutorialzine.com/2014/03/nodejs-private-webchat/" id="logo">Tutorial<span>zine</span>: NODE.JS CHAT TUTORIAL</a>
+			<a href="http://tutorialzine.com/2014/03/nodejs-private-webchat/" id="logo">El Futbolero<span> La Polla!!!</span></a>
 		</h1>
-
 	</header>
-
-
 	<section class="section">
-
 		<!-- These elements are displayed as white info cards in the middle of the screen -->
-
-		<div class="connected">
-
-			<img src="../img/unnamed.jpg" id="creatorImage" />
-
-			<div class="infoConnected">
+		<div class="connected relative">
+			<figure class="avatar absolute">
+				<img src="../img/unnamed.jpg" id="creatorImage" />	
+			</figure>
+			<div class="infoConnected small center-block absolute">
 				<h2>Who are you?</h2>
 				<br/>
-
 				<form class="loginForm">
 					<input type="text" id="yourName" placeholder="Your nick name" /><br/>
 					<input type="text" id="yourEmail" placeholder="Your email address" /><br/>
