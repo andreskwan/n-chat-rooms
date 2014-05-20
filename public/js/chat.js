@@ -3,50 +3,49 @@
 $(function(){
 
 	// getting the id of the room from the url
-	var id = Number(window.location.pathname.match(/\/chat\/(\d+)$/)[1]);
-
-	// connect to the socket
-	var socket = io.connect('/socket');
-
-	// variables which hold the data for each person
-	var name = "",
-		email = "",
-		img = "",
-		friend = "";
-
-	// cache some jQuery objects
-	var section = $(".section"),
-		footer = $("footer"),
-		onConnect = $(".connected"),
-		inviteSomebody = $(".invite-textfield"),
-		personInside = $(".personinside"),
-		chatScreen = $(".chatscreen"),
-		left = $(".left"),
-		noMessages = $(".nomessages"),
-		tooManyPeople = $(".toomanypeople");
-
-	// some more jquery objects
-	var chatNickname = $(".nickname-chat"),
-		leftNickname = $(".nickname-left"),
-		loginForm = $(".loginForm"),
-		yourName = $("#yourName"),
-		yourEmail = $("#yourEmail"),
-		hisName = $("#hisName"),
-		hisEmail = $("#hisEmail"),
-		chatForm = $("#chatform"),
-		textarea = $("#message"),
-		messageTimeSent = $(".timesent"),
-		chats = $(".chats");
-
-	// these variables hold images
-	var ownerImage = $("#ownerImage"),
-		leftImage = $("#leftImage"),
-		noMessagesImage = $("#noMessagesImage");
+		var id           = Number(window.location.pathname.match(/\/chat\/(\d+)$/)[1]);
+		
+		// connect to the socket
+		var socket       = io.connect('/socket');
+		
+		// variables which hold the data for each person
+		var name         = "",
+		email            = "",
+		img              = "",
+		friend           = "";
+		
+		// cache some jQuery objects
+		var section      = $(".section"),
+		footer           = $("footer"),
+		onConnect        = $(".connected"),
+		inviteSomebody   = $(".invite-textfield"),
+		personInside     = $(".personinside"),
+		chatScreen       = $(".chatscreen"),
+		left             = $(".left"),
+		noMessages       = $(".nomessages"),
+		tooManyPeople    = $(".toomanypeople");
+		
+		// some more jquery objects
+		var chatNickname = $(".nickname-chat"),
+		leftNickname     = $(".nickname-left"),
+		loginForm        = $(".loginForm"),
+		yourName         = $("#yourName"),
+		yourEmail        = $("#yourEmail"),
+		hisName          = $("#hisName"),
+		hisEmail         = $("#hisEmail"),
+		chatForm         = $("#chatform"),
+		textarea         = $("#message"),
+		messageTimeSent  = $(".timesent"),
+		chats            = $(".chats");
+		
+		// these variables hold images
+		var ownerImage   = $("#ownerImage"),
+		leftImage        = $("#leftImage"),
+		noMessagesImage  = $("#noMessagesImage");
 
 
 	// on connection to server get the id of person's room
 	socket.on('connect', function(){
-
 		socket.emit('load', id);
 	});
 
@@ -57,23 +56,19 @@ $(function(){
 
 	// receive the names and avatars of all people in the chat room
 	socket.on('peopleinchat', function(data){
-
 		if(data.number === 0){
-
 			showMessage("connected");
-
 			loginForm.on('submit', function(e){
-
 				e.preventDefault();
-
 				name = $.trim(yourName.val());
-				
 				if(name.length < 1){
 					alert("Please enter a nick name longer than 1 character!");
 					return;
 				}
-
-				email = yourEmail.val();
+				//Kwan
+				//add this to avoid problems related with spaces at the end of the 
+				//email address
+				email = $.trim(yourEmail.val());
 
 				if(!isValid(email)) {
 					alert("Please enter a valid email!");
