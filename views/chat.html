@@ -19,7 +19,7 @@
 <body>
 	<header class="banner">
 		<h1 class="bannertext">
-			<a href="http://tutorialzine.com/2014/03/nodejs-private-webchat/" id="logo">El Futbolero<span> La Polla!!!</span></a>
+			<a href="#" id="logo">El Futbolero<span> La Polla!!!</span></a>
 		</h1>
 	</header>
 	<section class="section small">
@@ -72,7 +72,10 @@
 
 		<div class="toomanypeople caja">
 			<h2>Ups!, No puedes unirte a este chat</h2>
-			<h5>Por el momento solo permite conversación entre dos personas. <a title="New Room" href="/create" id="room">new room</a>?</h5>
+			<h5>Por el momento solo permite conversación entre dos personas. 
+			</h5>
+			<p><a title="New Room" href="/create" id="room">Crea una nueva sala</a>?
+			</p>
 		</div>
 
 		<div class="nomessages caja relative">
@@ -86,12 +89,10 @@
 		</div>
 
 		<div class="chatscreen">
-
 			<ul class="chats">
 				<!-- The chat messages will go here -->
 			</ul>
 		</div>
-
 	</section>
 
 	<footer data-position="fixed">
@@ -102,7 +103,6 @@
 			<input type="submit" id="submit" value="SEND"/>
 
 		</form>
-
 	</footer>
 
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
