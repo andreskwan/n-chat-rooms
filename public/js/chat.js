@@ -183,13 +183,28 @@ $(function(){
 			who = 'you';
 		}
 		var li = $(
-			'<li class=' + who + '>'+
-				'<div class="image">' +
-					'<img src=' + imgg + ' />' +
-					'<b></b>' +
-					'<i class="timesent" data-time=' + now + '></i> ' +
+			'<li class=' + who +'>'+
+				'<div class="messages">' +
+					'<div class="img-flags"> ' +
+						'<figure class="image">' +
+							'<img src=' + imgg + ' />' +
+						'</figure>' +
+						'<div class="flags"> ' +
+							// '<p> Flags </p>' +
+						'</div>' +					
+					'</div>' +						
+					'<div class="test"> ' +
+						'<div class="messages-user-name border-bottom"> ' +
+	 						'<b></b>' +
+	 					'</div>' +
+	 					'<div class="messages-user border-bottom"> ' +
+							'<p></p>' +
+						'</div>' +
+						'<div class=""> ' +
+							'<i class="timesent" data-time=' + now + '></i> ' +
+						'</div>' +
+					'</div>' +
 				'</div>' +
-				'<p></p>' +
 			'</li>');
 
 		// use the 'text' method to escape malicious user input
@@ -208,8 +223,9 @@ $(function(){
 
 	function isValid(thatemail) {
 
-		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		return re.test(thatemail);
+		// var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		// return re.test(thatemail);
+		return true;
 	}
 
 	function showMessage(status,data){
