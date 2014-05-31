@@ -80,7 +80,6 @@ $(function(){
 				}
 			});
 		}
-
 		else if(data.number === 1) {
 			showMessage("personinchat",data);
 			loginForm.on('submit', function(e){
@@ -101,13 +100,11 @@ $(function(){
 				else{
 					socket.emit('login', {user: name, avatar: email, id: id});
 				}
-
 			});
 		}
 		else {
 			showMessage("tooManyPeople");
 		}
-
 	});
 
 	// Other useful 
@@ -184,16 +181,16 @@ $(function(){
 		}
 		var li = $(
 			'<li class=' + who +'>'+
-				'<div class="messages">' +
-					'<div class="img-flags"> ' +
-						'<figure class="image">' +
+				'<div class="chat-message">' +
+					'<div class="chat-user-flags"> ' +
+						'<figure class="chat-user-image">' +
 							'<img src=' + imgg + ' />' +
 						'</figure>' +
 						'<div class="flags"> ' +
 							// '<p> Flags </p>' +
 						'</div>' +					
 					'</div>' +						
-					'<div class="test"> ' +
+					'<div class="chat-text"> ' +
 						'<div class="messages-user-name border-bottom"> ' +
 	 						'<b></b>' +
 	 					'</div>' +

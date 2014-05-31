@@ -1,3 +1,4 @@
+@import 'normalize'
 
 gris_oscuro    = #333333
 gris_claro     = #D1D1D1
@@ -7,11 +8,6 @@ c-titulo-caja  = #d6441b
 c-bubble       = blue
 c-banner       = #3C4446
 c-texto-caja   = white
-
-
-.avatar
-	left 0
-	right 0
 
 body
 	background-color fondo 
@@ -27,29 +23,29 @@ footer
 	padding-top 1em
 	position fixed
 	width 100%
-
+h1
+	margin 0px
 *
 	padding 0
 	margin 0
 .absolute
 	position absolute
-
-
+.avatar
+	left 0
+	right 0
 .banner
 	background-color #3c4446
 	height 70px
 	// margin-bottom 200px
-
 .bannertext
 	color white
 	font-family 'Open Sans Condensed',serif
 	font-size 25px
 	font-weight bold
-	padding-top 15px
+	padding 15px
 	text-align center
 	span
 		color #d6441b
-
 #big
 	font-weight bold
 	font-size 23px
@@ -91,9 +87,64 @@ footer
 	&.small
 		width 20em
 		// margin 0 auto
-
 .center-block
 	margin 0 auto
+
+.chat-message
+	// background-color red
+	//left
+	padding 10px 10px 10px 70px
+	border-radius 2px
+	box-shadow 0 1px 2px rgba(0,0,0,0.2) 
+	display inline-block
+	// margin-right 20px
+	// margin-bottom 30px
+	padding 0 1em
+	background-color c-bubble
+	border-radius 3px
+	box-shadow 0px 3px 3px #E3E4E6
+	color #637277
+	// line-height 1.4
+	&.small
+		p
+			min-width 80px
+			min-height 1em
+			max-width 120px
+		i 
+			font-size 0.6rem
+			color #aaa
+.chat-text
+	padding-left 4em
+.chat-user-flags
+.chat-user-image
+	clear both
+	float left
+	left 0
+	right 0
+	// height 	60px
+	// width 	60px
+	// text-align center
+	// overflow hidden
+	figure
+		padding 1em
+		background-color red
+	img
+		float  left
+		width  60px
+		height 60px
+		border-radius 50%
+	// b
+	// 	overflow hidden
+	// 	display  block
+	// 	clear    both
+	// 	padding-top 7px
+	// i
+	// 	font-size 12px
+	// 	line-height 1.2
+	// 	display block
+	// 	opacity 0.8
+	// 	padding-top 4px
+
 #chatform
 	width 700px
 	margin 0 auto
@@ -231,31 +282,6 @@ footer
 .homesection
 	text-align center
 	margin-top 140px
-.image
-	clear both
-	float left
-	left 0
-	right 0
-	height 160px
-	width 60px
-	text-align center
-	overflow hidden
-	img
-		float  left
-		width  60px
-		height 60px
-		border-radius 50%
-	b
-		overflow hidden
-		display  block
-		clear    both
-		padding-top 7px
-	i
-		font-size 12px
-		line-height 1.2
-		display block
-		opacity 0.8
-		padding-top 4px
 .info
 	padding 80px 0 0 0
 	text-align center
@@ -387,30 +413,6 @@ footer
 	resize none
 	font inherit
 	color inherit
-
-.messages
-	// background-color red
-	//left
-	padding 10px 10px 10px 70px
-	border-radius 2px
-	box-shadow 0 1px 2px rgba(0,0,0,0.2) 
-	display inline-block
-	// margin-right 20px
-	// margin-bottom 30px
-	padding 0 1em
-	background-color c-bubble
-	border-radius 3px
-	box-shadow 0px 3px 3px #E3E4E6
-	color #637277
-	// line-height 1.4
-	&.small
-		p
-			min-width 80px
-			min-height 1em
-			max-width 120px
-		i 
-			font-size 0.6rem
-			color #aaa
 
 .messages-user
 	border-bottom 1px solid #818181
