@@ -29,6 +29,8 @@ footer
 	display none
 	left 0
 	padding-top 1em
+ul
+	padding 0px
 // // figure
 // //  margin-bottom 1em
 // //  margin-top 1em
@@ -100,21 +102,20 @@ footer
 	&.small
 		width 20em
 		// margin 0 auto
-
 .center-block
 	margin 0 auto
+.chatscreen
+	display none
+	// width 700px
+	margin 0 auto 200px
+	overflow hidden
 .chats//ul
-	list-style-type none
 	position relative
-	border 8px solid yellow
-.group:before,
-.group:after{
-	content: "";
-	display: table;
-}
-.group:after{
-	clear: both;
-}
+	list-style none
+	// list-style-type none
+	// border 8px solid yellow
+    // padding-left 8px
+    // margin-left: 0;
 .me
 	background-color c-top
 	.bubble
@@ -128,6 +129,7 @@ footer
 	background-color c-banner
 	margin-bottom 10px
 	display block
+	// margin-left -4em
 .bubble 
 	color gris_claro
 	max-width 280px
@@ -165,6 +167,14 @@ footer
 	content ""
 	height 50%
 	border 5px solid green
+.group:before,
+.group:after{
+	content: "";
+	display: table;
+}
+.group:after{
+	clear: both;
+}
 
 // .me
 // 	clear both
@@ -292,11 +302,6 @@ footer
 // 			color #637277
 // 			line-height 1.4
 // 			word-wrap break-word
-// .chatscreen
-// 	display none
-// 	// width 700px
-// 	margin 0 auto 200px
-// 	overflow hidden
 // .connected
 // 	//
 // #create
