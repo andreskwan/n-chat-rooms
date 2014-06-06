@@ -174,15 +174,39 @@ $(function(){
 	function createChatMessage(msg,user,imgg,now){
 		var who = '';
 		if(user===name) {
-			who = 'me';
+			who = 'class = \"me group\"';
 		}
 		else {
-			who = 'you';
+			who = 'class = \"you group\"';
 		}
+		// var li = $(
+		// 	'<li class=' + who +'>'+
+		// 		'<div class="chat-message">' +
+		// 			'<div class="chat-user-flags"> ' +
+		// 				'<figure class="chat-user-image">' +
+		// 					'<img src=' + imgg + ' />' +
+		// 				'</figure>' +
+		// 				'<div class="flags"> ' +
+		// 					// '<p> Flags </p>' +
+		// 				'</div>' +					
+		// 			'</div>' +						
+		// 			'<div class="chat-text"> ' +
+		// 				'<div class="messages-user-name border-bottom"> ' +
+	 // 						'<b></b>' +
+	 // 					'</div>' +
+	 // 					'<div class="messages-user border-bottom"> ' +
+		// 					'<p></p>' +
+		// 				'</div>' +
+		// 				'<div class=""> ' +
+		// 					'<i class="timesent" data-time=' + now + '></i> ' +
+		// 				'</div>' +
+		// 			'</div>' +
+		// 		'</div>' +
+		// 	'</li>');
 		var li = $(
-			'<li class=' + who +'>'+
-				'<div class="chat-message">' +
-					'<div class="chat-user-flags"> ' +
+			'<li '+ who +'>'+
+				'<div class="bubble">' +
+					'<div class="usuario"> ' +
 						'<figure class="chat-user-image">' +
 							'<img src=' + imgg + ' />' +
 						'</figure>' +
@@ -190,7 +214,7 @@ $(function(){
 							// '<p> Flags </p>' +
 						'</div>' +					
 					'</div>' +						
-					'<div class="chat-text"> ' +
+					'<div class="mensaje"> ' +
 						'<div class="messages-user-name border-bottom"> ' +
 	 						'<b></b>' +
 	 					'</div>' +
@@ -203,7 +227,6 @@ $(function(){
 					'</div>' +
 				'</div>' +
 			'</li>');
-
 		// use the 'text' method to escape malicious user input
 		li.find('p').text(msg);
 		li.find('b').text(user);
