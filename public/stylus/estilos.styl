@@ -11,14 +11,9 @@ c-texto-caja   = white
 c-middle       = #87CEEB
 c-top          = #ff6347 
 
-// a
-// 	text-decoration none
+a
+	text-decoration none
 
-// body
-// 	background-color fondo 
-// 	// background-color red
-// 	color #667073
-// 	font 16px/1.3 'Arial',sans-serif
 footer
 	position fixed
 	// top 90%
@@ -31,19 +26,6 @@ footer
 	padding-top 1em
 ul
 	padding 0px
-// // figure
-// //  margin-bottom 1em
-// //  margin-top 1em
-// h1
-// 	margin 0px
-// // *
-// //  padding 0
-// //  margin 0
-// .absolute
-// 	position absolute
-// .avatar
-// 	left 0
-// 	right 0
 .banner
 	background-color #3c4446
 	height 70px
@@ -61,20 +43,6 @@ ul
 		color white
 	span
 		color #d6441b
-// #big
-// 	font-weight bold
-// 	font-size 23px
-// .body
-// 	text-align center
-// 	width 40%
-// 	display block
-// 	margin 0px auto 650px
-// 	background-color #ffffff
-// 	color #637277
-// .border-bottom
-// 	border-bottom 1px solid gris_claro  
-// 	// .right
-// 	//   float right
 .caja 
 	text-align center
 	display block
@@ -117,30 +85,41 @@ ul
     // padding-left 8px
     // margin-left: 0;
 .me
-	background-color c-top
 	.bubble
+		background-color gris_oscuro
+	.bubble
+	.usuario
 		float right
+		margin-left 1em
+		
 .you
-	background-color c-middle
+	// .message
 	.bubble
+		background-color c-banner
+	.bubble
+	.usuario		
 		float left
+		margin-right 1em
 .you//li	
 .me//li
-	background-color c-banner
+	// background-color c-banner
 	margin-bottom 10px
 	display block
 	// margin-left -4em
 .bubble 
 	color gris_claro
 	max-width 280px
+	border-radius 5px
+	box-shadow 0px 3px 3px #E3E4E6
 	p 
-		border 5px solid gray	
+		// border 5px solid gray	
 		width auto
 		height auto
 	b
-		border 5px solid green
+		// border 1px solid white
 		font-size 0.5em
 		width 100%
+		float center
 	figure
 		margin 0px
 		height 50%
@@ -150,23 +129,31 @@ ul
 		width  50px
 		height 50px
 		border-radius 50%
+.name
+.time
+	// border 5px solid red
+	// margin 0 auto
+	
+
 .timesent
-	border 5px solid green
+	// border 2px solid green
 	font-size 0.5em
 	width auto
 	color gris_claro
+	float center
+
 .mensaje
 	max-width 140px
-	margin-left 1em
 .mensaje
 .usuario
-	border 5px solid red
+	// border 5px solid white
 	display inline-block	
 	height 100%
+	width  80px
 .flags 
 	content ""
 	height 50%
-	border 5px solid green
+	// border 5px solid green
 .group:before,
 .group:after{
 	content: "";
@@ -175,6 +162,25 @@ ul
 .group:after{
 	clear: both;
 }
+
+// body
+// 	background-color fondo 
+// 	// background-color red
+// 	color #667073
+// 	font 16px/1.3 'Arial',sans-serif
+// // figure
+// //  margin-bottom 1em
+// //  margin-top 1em
+// h1
+// 	margin 0px
+// // *
+// //  padding 0
+// //  margin 0
+// .absolute
+// 	position absolute
+// .avatar
+// 	left 0
+// 	right 0
 
 // .me
 // 	clear both

@@ -179,35 +179,21 @@ $(function(){
 		else {
 			who = 'class = \"you group\"';
 		}
-		// var li = $(
-		// 	'<li class=' + who +'>'+
-		// 		'<div class="chat-message">' +
-		// 			'<div class="chat-user-flags"> ' +
-		// 				'<figure class="chat-user-image">' +
-		// 					'<img src=' + imgg + ' />' +
-		// 				'</figure>' +
-		// 				'<div class="flags"> ' +
-		// 					// '<p> Flags </p>' +
-		// 				'</div>' +					
-		// 			'</div>' +						
-		// 			'<div class="chat-text"> ' +
-		// 				'<div class="messages-user-name border-bottom"> ' +
-	 // 						'<b></b>' +
-	 // 					'</div>' +
-	 // 					'<div class="messages-user border-bottom"> ' +
-		// 					'<p></p>' +
-		// 				'</div>' +
-		// 				'<div class=""> ' +
-		// 					'<i class="timesent" data-time=' + now + '></i> ' +
-		// 				'</div>' +
-		// 			'</div>' +
-		// 		'</div>' +
-		// 	'</li>');
+			// 	var li = $(
+			// '<li class=' + who + '>'+
+			// 	'<div class="image">' +
+			// 		'<img src=' + imgg + ' />' +
+			// 		'<b></b>' +
+			// 		'<i class="timesent" data-time=' + now + '></i> ' +
+			// 	'</div>' +
+			// 	'<p></p>' +
+			// '</li>');
+				
 		var li = $(
 			'<li '+ who +'>'+
 				'<div class="bubble">' +
 					'<div class="usuario"> ' +
-						'<figure class="chat-user-image">' +
+						'<figure class="foto">' +
 							'<img src=' + imgg + ' />' +
 						'</figure>' +
 						'<div class="flags"> ' +
@@ -215,13 +201,13 @@ $(function(){
 						'</div>' +					
 					'</div>' +						
 					'<div class="mensaje"> ' +
-						'<div class="messages-user-name border-bottom"> ' +
+						'<div class="name border-bottom"> ' +
 	 						'<b></b>' +
 	 					'</div>' +
 	 					'<div class="messages-user border-bottom"> ' +
 							'<p></p>' +
 						'</div>' +
-						'<div class=""> ' +
+						'<div class="time"> ' +
 							'<i class="timesent" data-time=' + now + '></i> ' +
 						'</div>' +
 					'</div>' +
