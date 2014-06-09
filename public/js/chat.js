@@ -188,28 +188,30 @@ $(function(){
 			// 	'</div>' +
 			// 	'<p></p>' +
 			// '</li>');
-				
+
 		var li = $(
 			'<li '+ who +'>'+
 				'<div class="bubble">' +
 					'<div class="usuario"> ' +
-						'<figure class="foto">' +
+						// '<figure class="foto">' +
 							'<img src=' + imgg + ' />' +
-						'</figure>' +
-						'<div class="flags"> ' +
-							// '<p> Flags </p>' +
-						'</div>' +					
+						// '</figure>' +
+						'<b></b>' +
+						'<i class="timesent" data-time=' + now + '></i> ' +
+						// '<div class="flags"> ' +
+						// 	// '<p> Flags </p>' +
+						// '</div>' +					
 					'</div>' +						
 					'<div class="mensaje"> ' +
-						'<div class="name border-bottom"> ' +
-	 						'<b></b>' +
-	 					'</div>' +
+						// '<div class="name border-bottom"> ' +
+	 						
+	 				// 	'</div>' +
 	 					'<div class="messages-user border-bottom"> ' +
 							'<p></p>' +
 						'</div>' +
-						'<div class="time"> ' +
-							'<i class="timesent" data-time=' + now + '></i> ' +
-						'</div>' +
+						// '<div class="time"> ' +
+							
+						// '</div>' +
 					'</div>' +
 				'</div>' +
 			'</li>');
@@ -226,7 +228,7 @@ $(function(){
 	function scrollToBottom(){
 		$("html, body").animate({ scrollTop: $(document).height()-$(window).height() },1000);
 	}
-
+	// validates the email addres
 	function isValid(thatemail) {
 
 		// var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
