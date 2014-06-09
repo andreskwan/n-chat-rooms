@@ -85,24 +85,28 @@ ul
     // padding-left 8px
     // margin-left: 0;
 .me
-	.message
+	.mensaje
 		background-color c-banner
-	// .bubble
-	// 	// background-color gris_oscuro
+		p
+			color gris_claro
 	.bubble
 	.usuario
 		float right
 		margin-left 1em
+	// .bubble
+	// 	// background-color gris_oscuro
 		
 .you
-	.message
-		background-color white
-	// .bubble
-	// 	// background-color gris_claro
-	.bubble
+	// .bubble		
 	.usuario		
 		float left
 		margin-right 1em
+	.mensaje
+		background-color gris_claro
+		p
+			color gris_oscuro
+	// .bubble
+	// 	background-color gris_claro
 
 .you//li	
 .me//li
@@ -121,13 +125,19 @@ ul
 		height auto
 		word-wrap break-word
 	b
-		// border 1px solid white
 		color gris_oscuro
+	b
+	i 
+		// border 1px solid white
 		font-size 0.8em
 		width 100%
-		float center
+		word-wrap break-word
+		display block
+		// float center
+		text-align center
 	figure
 		margin 0px
+		padding-left 1em
 		// height 50%
 		// border 5px solid red
 	img
@@ -139,6 +149,9 @@ ul
 .time
 	// border 5px solid red
 	// margin 0 auto
+	word-wrap break-word
+	display block
+	text-align center
 .timesent
 	// border 2px solid green
 	font-size 0.8em
@@ -159,6 +172,13 @@ ul
 	display inline-block	
 	height 100%
 	width  80px
+	// margin 1em
+	color  gris_oscuro
+.foto
+	display inline-block
+	text-align center
+	padding 0 
+	// margin 0 auto
 .flags 
 	content ""
 	height 50%

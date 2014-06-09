@@ -193,9 +193,9 @@ $(function(){
 			'<li '+ who +'>'+
 				'<div class="bubble">' +
 					'<div class="usuario"> ' +
-						// '<figure class="foto">' +
+						'<figure class="foto">' +
 							'<img src=' + imgg + ' />' +
-						// '</figure>' +
+						'</figure>' +
 						'<b></b>' +
 						'<i class="timesent" data-time=' + now + '></i> ' +
 						// '<div class="flags"> ' +
