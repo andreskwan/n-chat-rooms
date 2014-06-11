@@ -7,7 +7,6 @@
 -->
 
 <html lang="es"> 
-
 <head>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,7 +14,6 @@
 	<link rel="stylesheet" href="../css/estilos.css" />
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans Condensed:300italic,300,700" rel="stylesheet" type="text/css">
 </head>
-
 <body>
 	<header class="banner">
 		<h1 class="bannertext">
@@ -38,12 +36,10 @@
 				</form>
 			</div>
 		</div>
-
 		<div class="personinside caja relative">
 			<figure class="avatar absolute">
 				<img src="../img/unnamed.jpg" id="ownerImage" />
 			</figure>
-
 			<div class="infoInside  absolute">
 				<h2>Chatea con <span class="nickname-chat"></span></h2>
 			<br/>			
@@ -54,12 +50,10 @@
 				</form>
 			</div>
 		</div>
-
 		<div class="invite-textfield caja">
 			<h2>Solo en el chat!</h2>
 			<h5>Invita a alguien enviandole la url de esta pagina. <strong>ToDo: agregar invitacion a amigos</strong></h5>
 		</div>
-
 		<div class="left caja relative">
 			<figure>
 				<img src="../img/unnamed.jpg" id="leftImage" />
@@ -69,7 +63,6 @@
 				<h5>Invita a alguien enviandole la url de esta pagina.<strong>ToDo: agregar invitacion a amigos</strong></h5>
 			</div>
 		</div>
-
 		<div class="toomanypeople caja">
 			<h2>Ups!, No puedes unirte a este chat</h2>
 			<h5>Por el momento solo permite conversación entre dos personas. 
@@ -77,7 +70,6 @@
 			<p><a title="New Room" href="/create" id="room">Crea una nueva sala</a>?
 			</p>
 		</div>
-
 		<div class="nomessages caja relative">
 			<figure>
 				<img src="../img/unnamed.jpg" id="noMessagesImage" />
@@ -87,29 +79,21 @@
 				<h5>Enviale un mensaje!</h5>
 			</div>
 		</div>
-
 		<div class="chatscreen">
 			<ul class="chats group">
 				<!-- The chat messages will go here -->
 			</ul>
 		</div>
 	</section>
-
 	<footer data-position="fixed">
-
 		<form id="chatform">
-
 			<textarea id="message" placeholder="Escribele por cuanto ganara tu equipo"></textarea>
 			<input type="submit" id="submit" value="Enviar"/>
-
 		</form>
 	</footer>
-
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="../js/moment.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="../js/chat.js"></script>
-
 </body>
-
 </html>

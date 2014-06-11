@@ -148,6 +148,7 @@ $(function(){
 		}
 	});
 
+	//not socket.io just identifying an event
 	chatForm.on('submit', function(e){
 		e.preventDefault();
 		// Create a new chat message and display it directly
@@ -237,74 +238,53 @@ $(function(){
 	}
 
 	function showMessage(status,data){
-
 		if(status === "connected"){
-
 			section.children().css('display', 'none');
 			onConnect.fadeIn(1200);
 		}
-
 		else if(status === "inviteSomebody"){
-
 			// Set the invite link content
 			$("#link").text(window.location.href);
-
 			onConnect.fadeOut(1200, function(){
 				inviteSomebody.fadeIn(1200);
 			});
 		}
-
 		else if(status === "personinchat"){
-
 			onConnect.css("display", "none");
 			personInside.fadeIn(1200);
-
 			chatNickname.text(data.user);
 			ownerImage.attr("src",data.avatar);
 		}
-
 		else if(status === "youStartedChatWithNoMessages") {
-
 			left.fadeOut(1200, function() {
 				inviteSomebody.fadeOut(1200,function(){
 					noMessages.fadeIn(1200);
 					footer.fadeIn(1200);
 				});
 			});
-
 			friend = data.users[1];
 			noMessagesImage.attr("src",data.avatars[1]);
 		}
-
 		else if(status === "heStartedChatWithNoMessages") {
-
 			personInside.fadeOut(1200,function(){
 				noMessages.fadeIn(1200);
 				footer.fadeIn(1200);
 			});
-
 			friend = data.users[0];
 			noMessagesImage.attr("src",data.avatars[0]);
 		}
-
 		else if(status === "chatStarted"){
-
 			section.children().css('display','none');
 			chatScreen.css('display','block');
 		}
-
 		else if(status === "somebodyLeft"){
-
 			leftImage.attr("src",data.avatar);
 			leftNickname.text(data.user);
-
 			section.children().css('display','none');
 			footer.css('display', 'none');
 			left.fadeIn(1200);
 		}
-
 		else if(status === "tooManyPeople") {
-
 			section.children().css('display', 'none');
 			tooManyPeople.fadeIn(1200);
 		}

@@ -21,6 +21,8 @@ var io = require('socket.io').listen(app.listen(port));
 
 // app.use(express.static('./public'));
 
+
+//example of anonymous function 
 require('./config')(app, io);
 require('./routes')(app, io);
 
